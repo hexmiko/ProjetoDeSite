@@ -9,6 +9,7 @@ body{
 header{
     background-color: gray;
     display: flex;
+    justify-content: space-around;
     border: 3px solid black;
     
 }
