@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Estudos Hermínio C. de Miranda</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('CljscYqJznKCwRWQR');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('gmailMessage', 'template_sta9b2k', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        alert('Success!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert('Failed..', error);
+                    });
+            });
+        }
+    </script>
+
+
+</head>
+
+
+
+
+<body>
+    <div class="conteudo">
+        
+        <header>
+            <h1>Página oficial do Grupo de Estudos Hermínio C. de Miranda</h1>
+            <ul>
+                <li>
+                    rede social
+                </li>
+                <li>
+                    rede social
+                </li>
+
+            </ul>
+        </header>
+
+        <!-- Colocar algo aqui nao lembro o que -->
+        <article>
+            <div id="principal">
+                
+
+                <p>Inscreva-se no canal <a href="https://www.google.com/" target="_blank">Grupo de Estudos Hermínio C. de Miranda</a></p>
+
+                <label></label>
+
+
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <label>Após a inscrição no Canal, cadastre o seu email aqui e receba o mapa gratuitamente. -> Email</label>
+                    <input type="email" name="user_email">
+                    <input  type="submit" value="Enviar">
+                </form>
+
+                <img src="Image/imagem.jpeg" alt="imagemteste" width="300" height="300">
+            </div>
+            <div id="oquee">
+                <h2>O que é o mapa histórico?</h2>
+
+                <iframe width="480" height="270" 
+                src="https://www.youtube.com/embed/yv-MFM2BJQI" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+                <!--Adicionar mais formatos OU colocar um video do Youtube-->
+            </div>
+        </article>
+    </div>
+
+</body>
+</html>
